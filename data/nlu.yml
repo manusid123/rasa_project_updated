@@ -187,9 +187,14 @@ nlu:
 - intent: bot_challenge
   examples: |
     - are you a bot?
-    - are you a human?
+    - are you a chatbot?
     - am I talking to a bot?
-    - am I talking to a human?
+    - you are an AI?
+    - are you an AI bot?
+    - Are you a robot?
+    - you're an AI
+    - are you artificially intelligent?
+    - are you a program
 
 - synonym: employment
   examples: |
@@ -241,6 +246,127 @@ nlu:
     - How to become rich ?
     - how to start new business without risk ?
 
+- intent: chitchat/ask_name
+  examples: |
+    - what is your name? 
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+    - Tell me something about yourself?
+    - could you tell me your name?
+    - please tell me your name?
+    - introduce yourself
+    - give me your introduction
+    - Please introduce yourself
+    - To whom am I talking to?
+    - What’s your name?
+    - why are you here?
+    - talk about yourself
+    - tell me some stuff about you
+    - talk some stuff about yourself
+    - I want to know you better
+    - I want to know more about you
+    - tell me about you
+    - tell me about yourself
+    - describe yourself
+    - say about you
+    - define yourself
+    - all about you
+    - what are you upto?
+    - who the hell are you?
+    - Are you male or female?
+    - who are you?
+    - what are you?
+    - why do you exist?
+    - tell me more about yourself
+
+- intent: chitchat/ask_human
+  examples: |
+    - are you a human? 
+    - are you a real person?
+    - Am I talking to a human?
+    - are you a bot or a human?
+    - you human?
+- intent: chitchat/ask_good
+  examples: |
+    - you are very helpful
+    - you are the best
+    - you're a true professional
+    - you are good
+    - you work well
+    - you're awesome
+    - you're perfect
+    - you're great
+    - you're so kind
+    - you are amazing
+    - you are awesome
+    - you are coool
+    - you are really good
+    - you are really nice
+    - you are so amazing
+    - you're just super
+    - you are so awesome
+    - you are so cool
+    - you are so fine
+    - you are so good
+    - you are so helpful
+    - you are so lovely
+    - you are the best ever
+    - you are the best in the world
+    - you are the nicest person in the world
+    - you are too good
+    - you are very coool
+    - you are very kind
+    - you are very lovely
+    - you are very useful
+    - you are wonderful
+    - you made my day
+    - you rock
+    - you almost sound human
+    - I want to tell everyone how awesome you are
+    - I'd like to tell everyone that you are awesome
+    - I want to let everyone know that you are awesome
+    - let's tell everyone that you are awesome
+    - you are really amazing
+    - coool
+    - nice
+    - good
+    - perfect
+    - awesome
+    - super
+    - fantastic
+
+- intent: chitchat/ask_about
+  examples: |
+    - how are you? 
+    - how's you?
+    - how are you buddy?
+    - how are you man?
+- intent: chitchat/ask_doing
+  examples: |
+    - how are you doing?
+    - how you doing?
+    - what you doing now?
+    - hey what's up
+    - what's up today
+- intent: chitchat/ask_howhelp
+  examples: |
+    - how can you help me?
+    - i need some details
+    - what can you do for me?
+    - In what way you can help me?
+    - can you assist me here?
+    - I am new here! could you please help me?
+    - what can you do?
+    - I have a question can you help me?
+- intent: chitchat/ask_human_transfer
+  examples: |
+    - I want to speak to a human
+    - I want to chat to a human
+    - I want to speak to a real person
+    - Could you please ask human to speak
+    - I want to communicate with customer service
+    - I want to speak to a live agent
 - intent: faq/tax_relief
   examples: |
     - what is tax relief options? 
@@ -429,6 +555,14 @@ nlu:
     - could you please help me
     - help
     - I need your help
+- intent: faq/help_tax_advise
+  examples: |
+    - can you help me in tax advise?
+    - Who can I ask for tax advice?
+    - help in tax advice
+    - could you please help me in tax advice
+    - can you solve my tax problems?
+
 - intent: faq/tax_debt
   examples: |
     - tax debt help
