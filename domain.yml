@@ -10,6 +10,7 @@ intents:
 - bot_challenge
 - out_of_scope
 - faq
+- chitchat
 entities:
 - item
 slots:
@@ -19,31 +20,31 @@ slots:
 responses:
   utter_greet_ask:
   - buttons:
-    - title: Tax Debt
-      payload: Tax Debt
-    - title: Unfiled Tax Returns
-      payload: Unfiled Tax Returns
-    - title: Tax Audit Representation
-      payload: Tax Audit Representation
-    - title: Employment Tax Help
-      payload: Employment Tax Help
-    - title: Tax Lien Help
-      payload: Tax Lien Help
+    - payload: Tax Debt
+      title: Tax Debt
+    - payload: Unfiled Tax Returns
+      title: Unfiled Tax Returns
+    - payload: Tax Audit Representation
+      title: Tax Audit Representation
+    - payload: Employment Tax Help
+      title: Employment Tax Help
+    - payload: Tax Lien Help
+      title: Tax Lien Help
     text: Hi, I am Syra, your digital assistant. Select your query from the below
       list of topics or type in your query directly. In case, you need to see FAQs
       visit [here](https://www.myirstaxrelief.com/faqs.html)
   utter_ask_again:
   - buttons:
-    - title: Tax Debt
-      payload: Tax Debt
-    - title: Unfiled Tax Returns
-      payload: Unfiled Tax Returns
-    - title: Tax Audit Representation
-      payload: Tax Audit Representation
-    - title: Employment Tax Help
-      payload: Employment Tax Help
-    - title: Tax Lien Help
-      payload: Tax Lien Help
+    - payload: Tax Debt
+      title: Tax Debt
+    - payload: Unfiled Tax Returns
+      title: Unfiled Tax Returns
+    - payload: Tax Audit Representation
+      title: Tax Audit Representation
+    - payload: Employment Tax Help
+      title: Employment Tax Help
+    - payload: Tax Lien Help
+      title: Tax Lien Help
     text: Could you please choose from below options what you are exactly looking
       for?
   utter_did_that_help:
@@ -544,25 +545,38 @@ responses:
       problems is a major hurdle in ones life.  To know more visit https://www.myirstaxrelief.com/941-tax-problems-help.html
       and https://www.myirstaxrelief.com/how-to-deal-with-941-payroll-tax-problems.html
       Read blog here https://blog.myirstaxrelief.com/employment-payroll-form-941-ea-cpa-tax-attorney-resolution/
-  utter_what_else:
-  - text: What else you want to know ?
-  - text: Anything else you wanna know ?
-  - text: I'm extremely sorry !! could you please tell what else you are looking for?
-  - text: Its sad to hear that !! could you please tell me in detail what else you
-      wanna know ?
+  utter_faq/help_tax_advise:
+  - text: I can help you in your queries related to tax advice.
   utter_goodbye:
   - text: Bye Bye! have a great day!!
   - text: Good Bye! have a good day!!
   - text: Thanks for visiting us. Good day!
   utter_iamabot:
   - text: Yes, I am a bot named Syra. I can help you with Tax related queries.
-  - text: Yes, I am a bot. I am here to help you with Tax related queries.
+  - text: Yes, I am a bot. I am here to help you in Tax related queries.
   - text: Yes, I am a bot named Syra. I can help you in answering your doubts regarding
       tax advice.
   utter_out_of_scope:
   - text: Sorry! I didnt get you. Try to ask something about tax filing advise
   - text: I suggest you to visit our FAQs [here](https://www.myirstaxrelief.com/faqs.html)
       or you can reach us by visiting [here](https://www.myirstaxrelief.com/contact-us.html)
+  utter_chitchat/ask_name:
+  - image: https://i.ibb.co/qp1Lysm/bot.jpg
+    text: My name is Syra. I am a bot. I am here to help you in Tax related queries.
+  utter_chitchat/ask_human:
+  - image: https://i.ibb.co/qp1Lysm/bot.jpg
+    text: No! I m not a human. I am a bot named Syra. I am here to help you in Tax
+      related queries.
+  utter_chitchat/ask_about:
+  - text: I am good! serving users in Tax related queries.
+  utter_chitchat/ask_doing:
+  - text: Well! I am doing good. Serving users in Tax related queries.
+  utter_chitchat/ask_howhelp:
+  - text: I can help you in answering your tax related queries.
+  utter_chitchat/ask_human_transfer:
+  - text: Ok !! So for that you can contact us on https://www.myirstaxrelief.com/contact-us.html
+  utter_chitchat/ask_good:
+  - text: Thanks for the compliment!!.
 actions:
 - utter_greet_ask
 - action_check_item
