@@ -292,3 +292,74 @@ stories:
   - action: action_intent_retrieve
   - intent: customer_support
   - action: action_intent_retrieve
+- story: Story from Conversation ID c8a6ba486d6d42ed8e33b9c166e16afe
+  steps:
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: closed
+  - intent: order
+    entities:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - intent: customer_support
+  - action: action_intent_retrieve
+- story: Story from Conversation ID cd30ebff11a94f98bc5610d40e2dd2fd
+  steps:
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: closed
+  - intent: order
+    entities:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: open
+  - intent: order
+    entities:
+    - order_type: open
+  - action: action_intent_ent_retrieve
+- story: Story from Conversation ID 5b5e075f76a54c1a8db7190b761df677
+  steps:
+  - action: action_intent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+  - action: action_intent_ent_retrieve
+- story: Story from Conversation ID 5fe76b52eb6844e69c3569fb84d910cf
+  steps:
+  - slot_was_set:
+    - order_type: open
+  - intent: order
+    entities:
+    - order_type: open
+  - action: action_intent_ent_retrieve
+  - intent: return_policy
+  - action: action_intent_retrieve
+  - intent: subscribe
+  - action: action_intent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - intent: recommended_products
+  - action: action_intent_retrieve

@@ -1,43 +1,44 @@
 version: "2.0"
-
 nlu:
-
 - intent: order
   examples: |
     - i'm looking for my order?
-    - Where are my [cancelled](order_type)?
     - where are my order?
-    - Track my order 
-    - Track my [closed](order_type)
-    - Track my [cancelled](order_type)
+    - Track my order
     - please help me in tracking my order
     - What are my [open](order_type) orders
     - What are my [closed](order_type) order?
     - What are my [cancelled](order_type) orders
-    - What are my [cancel](order_type:cancelled) orders?
-    - what is the status of my [open](order_type)?
-    - what is the status of my [close](order_type:closed)
+    - What are my [cancel]{"entity": "order_type", "value": "cancelled"} orders?
     - what is the status of my [cancelled](order_type)?
     - what is the status of my order
-    - what is the current status of my [open](order_type)?
-    - could you please track my [open](order_type)
-    - help me in tracking my [close](order_type:closed)
-    - please help me tracking my [cancelled](order_type)?
     - how can I track my order?
-    - how can I track my [cancelled](order_type)?
-    - how can I track my [closed](order_type)
-    - how can I track my [open](order_type)?
-    - what is the status of my [cancelled](order_type)
     - I want to track my order
     - order
     - [open](order_type) orders
     - [closed](order_type) order
     - [cancelled](order_type) order
-    - [cancel](order_type:cancelled) orders
-    
-
+    - [cancel ](order_type)[cancel]{"entity": "order_type", "value": "cancelled"} orders
+    - where are my [cancelled](order_type) order
+    - Track my [closed](order_type) order
+    - what is the status of my [open](order_type) order?
+    - what is the status of my[ closed](order_type) order?
+    - status of my [close](order_type) order
+    - what is the current status of my [open](order_type) order?
+    - current status of [cancel ](order_type)order
+    - what is the status of my [cancel](order_type) order?
+    - how can I track my [open](order_type) order
+    - how can I track my [close](order_type) order?
+    - how can I track my [active ](order_type)order?
+    - how can I track my[ canceled](order_type) order
+    - could you please track my [open](order_type) order
+    - track[ active](order_type) order
+    - help me tracking my [cancelled](order_type) order
+    - give me detail about my close order
+    - track [closed](order_type) order
+    - track [cancelled](order_type) order
 - intent: subscribe
-  examples: |       
+  examples: |
     - subscribe to get notifications
     - How can i subscribe
     - how can i subscribe for notification
@@ -45,9 +46,8 @@ nlu:
     - please tell me the process of subscription
     - could you please tell me how to subscribe
     - Subscribe
-
 - intent: promotion
-  examples: |  
+  examples: |
     - what deals are going on today
     - what are the current deals
     - what are current discount going on
@@ -56,14 +56,12 @@ nlu:
     - please tell me the current deals
     - deals
     - discount
-
 - intent: return_policy
   examples: |
     - What is the return policy of your store?
     - whats your return policy?
     - whats is the return policy
     - return policy
-
 - intent: customer_support
   examples: |
     - how do I contact customer support?
@@ -71,12 +69,18 @@ nlu:
     - how to contact customer support?
     - customer support
     - how can I contact customer support
-
 - intent: recommended_products
   examples: |
     - What are the recommended products of ur store?
     - what are the recommended products for me?
     - what products you recommend to me today?
     - what recommended product you suggest me
-
-
+- synonym: cancelled
+  examples: |
+    - cancel
+    - cancel
+    - canceled
+- synonym: closed
+  examples: |
+    - close
+    - closed
