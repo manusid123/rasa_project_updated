@@ -1,321 +1,294 @@
 version: "2.0"
-
 stories:
-
-- story: happy path1
+- story: happy path order
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Tax Debt"
+    - order_type
   - slot_was_set:
-    - item: "debt"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "debt"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path2
+    - order_type: null
+  - action: action_intent_retrieve
+- story: happy path full order
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Tax Lien Help"
+    - order_type: Open
   - slot_was_set:
-    - item: "lien"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "lien"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path3
+    - order_type: open
+  - action: action_intent_ent_retrieve
+- story: happy end full order
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Unfiled Tax Returns"
+    - order_type
   - slot_was_set:
-    - item: "unfiled"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "unfiled"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: ask_query 
+    - order_type: null
+  - action: action_intent_retrieve
+  - intent: order
     entities:
-    - item: "fees"
+    - order_type: Open
   - slot_was_set:
-    - item: "fees"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "fees"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path4
+    - order_type: open
+  - action: action_intent_ent_retrieve
+- story: happy end half order
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Tax Audit Representation"
+    - order_type: cancel
   - slot_was_set:
-    - item: "audit"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "audit"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: ask_query 
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - intent: order
     entities:
-    - item: "commission"
+    - order_type
   - slot_was_set:
-    - item: "commission"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "commission"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path5
+    - order_type: null
+  - action: action_intent_retrieve
+- story: happy path promotion
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
-    entities:
-    - item: "Unfiled Tax Returns"
-  - slot_was_set:
-    - item: "unfiled"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "unfiled"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path6
+  - intent: promotion
+  - action: action_intent_retrieve
+- story: happy path22
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Tax Lien help"
+    - order_type: closed
   - slot_was_set:
-    - item: "lien"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "lien"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path7
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+- story: happy path33
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "Employment Tax Help"
+    - order_type: cancel
   - slot_was_set:
-    - item: "employment"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "employment"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path8
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+- story: happy path44
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "433"
+    - order_type: cancelled
   - slot_was_set:
-    - item: "433"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "433"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: happy path9
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+- story: happy path55
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "1040"
+    - order_type: close
   - slot_was_set:
-    - item: "1040"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "1040"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: item not found
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+- story: happy path66
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "chinta"
+    - order_type: open
   - slot_was_set:
-    - item: "chinta"
-  - action: action_check_item
-  - slot_was_set:
-    - item: null
-  - action: utter_out_of_scope
-  - intent: ask_query 
-    entities:
-    - item: "433-f"
-  - slot_was_set:
-    - item: "433-f"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "433-f"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: Item asked initially
+    - order_type: open
+  - action: action_intent_ent_retrieve
+- story: happy path subscribe
   steps:
-  - intent: ask_query 
-    entities:
-    - item: "941"
-  - slot_was_set:
-    - item: "941"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "941"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: asking about fees initially
+  - intent: subscribe
+  - action: action_intent_retrieve
+- story: happy path subscribe 2
   steps:
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "fees"
+    - order_type: Open
   - slot_was_set:
-    - item: "fees"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "fees"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-
-- story: fees after response1
+    - order_type: open
+  - action: action_intent_ent_retrieve
+  - intent: subscribe
+  - action: action_intent_retrieve
+- story: happy path subscribe 3
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "504"
+    - order_type
   - slot_was_set:
-    - item: "504"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "504"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: ask_query 
-    entities:
-    - item: "commission"
-  - slot_was_set:
-    - item: "commission"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "commission"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: fees after response2
+    - order_type: null
+  - action: action_intent_retrieve
+  - intent: subscribe
+  - action: action_intent_retrieve
+- story: happy path subscribe 4
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: subscribe
+  - action: action_intent_retrieve
+  - intent: order
     entities:
-    - item: "941"
+    - order_type
   - slot_was_set:
-    - item: "941"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "941"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: ask_query 
-    entities:
-    - item: "charges"
-  - slot_was_set:
-    - item: "charges"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "charges"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: query regarding form 1120
+    - order_type: null
+  - action: action_intent_retrieve
+- story: happy path subscribe 5
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: subscribe
+  - action: action_intent_retrieve
+  - intent: order
     entities:
-    - item: "1120"
+    - order_type: close
   - slot_was_set:
-    - item: "1120"
-  - action: action_check_item
-  - slot_was_set:
-    - item: "1120"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: query regarding form433-d
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+- story: happy path promotion 2
   steps:
-  - intent: greet
-  - action: utter_greet_ask
-  - intent: ask_query 
+  - intent: order
     entities:
-    - item: "433-d"
+    - order_type: Open
   - slot_was_set:
-    - item: "433-d"
-  - action: action_check_item
+    - order_type: open
+  - action: action_intent_ent_retrieve
+  - intent: promotion
+  - action: action_intent_retrieve
+- story: happy path promotion 3
+  steps:
+  - intent: promotion
+  - action: action_intent_retrieve
+  - intent: order
+    entities:
+    - order_type: closed
   - slot_was_set:
-    - item: "433-d"
-  - action: action_result
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+- story: happy path promotion 4
+  steps:
+  - intent: promotion
+  - action: action_intent_retrieve
+  - intent: order
+    entities:
+    - order_type
+  - slot_was_set:
+    - order_type: null
+  - action: action_intent_retrieve
+- story: happy path return policy
+  steps:
+  - intent: return_policy
+  - action: action_intent_retrieve
+- story: happy path return policy 1
+  steps:
+  - intent: return_policy
+  - action: action_intent_retrieve
+  - intent: order
+    entities:
+    - order_type: closed
+  - slot_was_set:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+- story: happy path return policy 2
+  steps:
+  - intent: return_policy
+  - action: action_intent_retrieve
+  - intent: order
+    entities:
+    - order_type
+  - slot_was_set:
+    - order_type: null
+  - action: action_intent_retrieve
+- story: happy path customer support
+  steps:
+  - intent: customer_support
+  - action: action_intent_retrieve
+- story: happy path customer support 1
+  steps:
+  - intent: order
+    entities:
+    - order_type: closed
+  - slot_was_set:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+  - intent: customer_support
+  - action: action_intent_retrieve
+- story: happy path recommended products
+  steps:
+  - intent: recommended_products
+  - action: action_intent_retrieve
+- story: happy path recommended products 1
+  steps:
+  - intent: recommended_products
+  - action: action_intent_retrieve
+  - intent: order
+    entities:
+    - order_type
+  - slot_was_set:
+    - order_type: null
+  - action: action_intent_retrieve
+- story: Story from Conversation ID 233ef8223da44f5eb3a2ae61196e56e6
+  steps:
+  - action: action_intent_retrieve
+  - slot_was_set:
+    - order_type: open
+  - intent: promotion
+  - action: action_intent_retrieve
+- story: Story from Conversation ID 5fe76b52eb6844e69c3569fb84d910cf
+  steps:
+  - slot_was_set:
+    - order_type: open
+  - intent: order
+    entities:
+    - order_type: open
+  - action: action_intent_ent_retrieve
+  - intent: return_policy
+  - action: action_intent_retrieve
+  - intent: subscribe
+  - action: action_intent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - intent: recommended_products
+  - action: action_intent_retrieve
+- story: Story from Conversation ID 5b5e075f76a54c1a8db7190b761df677
+  steps:
+  - action: action_intent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+  - action: action_intent_ent_retrieve
+- story: Story from Conversation ID cd30ebff11a94f98bc5610d40e2dd2fd
+  steps:
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: closed
+  - intent: order
+    entities:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: open
+  - intent: order
+    entities:
+    - order_type: open
+  - action: action_intent_ent_retrieve
+- story: Story from Conversation ID c8a6ba486d6d42ed8e33b9c166e16afe
+  steps:
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: closed
+  - intent: order
+    entities:
+    - order_type: closed
+  - action: action_intent_ent_retrieve
+  - slot_was_set:
+    - order_type: cancelled
+  - intent: order
+    entities:
+    - order_type: cancelled
+  - action: action_intent_ent_retrieve
+  - intent: order
+  - action: action_intent_retrieve
+  - intent: customer_support
+  - action: action_intent_retrieve
